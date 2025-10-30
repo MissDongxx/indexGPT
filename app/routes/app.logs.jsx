@@ -99,93 +99,93 @@ export default function Logs() {
   };
 
   return (
-    &lt;s-page heading="Submission Logs"&gt;
-      &lt;s-section&gt;
-        &lt;s-inline-stack align="space-between"&gt;
-          &lt;s-text as="h3"&gt;IndexNow Submission History&lt;/s-text&gt;
-          &lt;s-button onClick={refreshLogs} variant="secondary"&gt;
+    <s-page heading="Submission Logs">
+      <s-section>
+        <s-inline-stack align="space-between">
+          <s-text as="h3">IndexNow Submission History</s-text>
+          <s-button onClick={refreshLogs} variant="secondary">
             Refresh
-          &lt;/s-button&gt;
-        &lt;/s-inline-stack&gt;
-      &lt;/s-section&gt;
+          </s-button>
+        </s-inline-stack>
+      </s-section>
 
       {loading ? (
-        &lt;s-section&gt;
-          &lt;s-spinner size="large" /&gt;
-          &lt;s-text&gt;Loading logs...&lt;/s-text&gt;
-        &lt;/s-section&gt;
+        <s-section>
+          <s-spinner size="large" />
+          <s-text>Loading logs...</s-text>
+        </s-section>
       ) : (
-        &lt;s-section&gt;
+        <s-section>
           {logs.length === 0 ? (
-            &lt;s-text&gt;No submission logs found.&lt;/s-text&gt;
+            <s-text>No submission logs found.</s-text>
           ) : (
-            &lt;s-table&gt;
-              &lt;s-table-head&gt;
-                &lt;s-table-row&gt;
-                  &lt;s-table-header-cell&gt;Timestamp&lt;/s-table-header-cell&gt;
-                  &lt;s-table-header-cell&gt;Status&lt;/s-table-header-cell&gt;
-                  &lt;s-table-header-cell&gt;URL Count&lt;/s-table-header-cell&gt;
-                  &lt;s-table-header-cell&gt;Response Code&lt;/s-table-header-cell&gt;
-                  &lt;s-table-header-cell&gt;Message&lt;/s-table-header-cell&gt;
-                &lt;/s-table-row&gt;
-              &lt;/s-table-head&gt;
-              &lt;s-table-body&gt;
+            <s-table>
+              <s-table-head>
+                <s-table-row>
+                  <s-table-header-cell>Timestamp</s-table-header-cell>
+                  <s-table-header-cell>Status</s-table-header-cell>
+                  <s-table-header-cell>URL Count</s-table-header-cell>
+                  <s-table-header-cell>Response Code</s-table-header-cell>
+                  <s-table-header-cell>Message</s-table-header-cell>
+                </s-table-row>
+              </s-table-head>
+              <s-table-body>
                 {logs.map((log) => (
-                  &lt;s-table-row key={log.id}&gt;
-                    &lt;s-table-cell&gt;
+                  <s-table-row key={log.id}>
+                    <s-table-cell>
                       {new Date(log.timestamp).toLocaleString()}
-                    &lt;/s-table-cell&gt;
-                    &lt;s-table-cell&gt;
-                      &lt;s-badge tone={getStatusColor(log.status)}&gt;
+                    </s-table-cell>
+                    <s-table-cell>
+                      <s-badge tone={getStatusColor(log.status)}>
                         {log.status}
-                      &lt;/s-badge&gt;
-                    &lt;/s-table-cell&gt;
-                    &lt;s-table-cell&gt;{log.urlCount}&lt;/s-table-cell&gt;
-                    &lt;s-table-cell&gt;{log.responseCode || 'N/A'}&lt;/s-table-cell&gt;
-                    &lt;s-table-cell&gt;
+                      </s-badge>
+                    </s-table-cell>
+                    <s-table-cell>{log.urlCount}</s-table-cell>
+                    <s-table-cell>{log.responseCode || 'N/A'}</s-table-cell>
+                    <s-table-cell>
                       {log.message || 'No message'}
-                    &lt;/s-table-cell&gt;
-                  &lt;/s-table-row&gt;
+                    </s-table-cell>
+                  </s-table-row>
                 ))}
-              &lt;/s-table-body&gt;
-            &lt;/s-table&gt;
+              </s-table-body>
+            </s-table>
           )}
 
           {/* 分页控件 */}
           {logs.length > 0 && (
-            &lt;s-section&gt;
-              &lt;s-inline-stack align="center" gap="base"&gt;
-                &lt;s-button
+            <s-section>
+              <s-inline-stack align="center" gap="base">
+                <s-button
                   onClick={handlePrevious}
                   disabled={pagination.offset === 0}
                   variant="secondary"
-                &gt;
+                >
                   Previous
-                &lt;/s-button&gt;
-                &lt;s-text&gt;
+                </s-button>
+                <s-text>
                   {pagination.offset + 1} - {Math.min(pagination.offset + pagination.limit, pagination.total)} of {pagination.total}
-                &lt;/s-text&gt;
-                &lt;s-button
+                </s-text>
+                <s-button
                   onClick={handleNext}
                   disabled={pagination.offset + pagination.limit >= pagination.total}
                   variant="secondary"
-                &gt;
+                >
                   Next
-                &lt;/s-button&gt;
-              &lt;/s-inline-stack&gt;
-            &lt;/s-section&gt;
+                </s-button>
+              </s-inline-stack>
+            </s-section>
           )}
-        &lt;/s-section&gt;
+        </s-section>
       )}
 
-      &lt;s-section&gt;
-        &lt;s-button
+      <s-section>
+        <s-button
           onClick={submitToIndexNow}
           loading={fetcher.state === "submitting"}
-        &gt;
+        >
           Submit to IndexNow Now
-        &lt;/s-button&gt;
-      &lt;/s-section&gt;
-    &lt;/s-page&gt;
+        </s-button>
+      </s-section>
+    </s-page>
   );
 }

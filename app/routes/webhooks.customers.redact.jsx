@@ -1,5 +1,4 @@
 import { boundary } from "@shopify/shopify-app-react-router/server";
-import prisma from "../db.server";
 
 // 处理客户数据删除请求
 export const action = async ({ request }) => {

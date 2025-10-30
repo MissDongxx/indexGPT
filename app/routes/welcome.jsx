@@ -25,30 +25,30 @@ export default function Welcome() {
   };
 
   return (
-    &lt;s-page heading="Welcome to IndexGPT!"&gt;
-      &lt;s-section&gt;
-        &lt;s-paragraph&gt;
+    <s-page heading="Welcome to IndexGPT!">
+      <s-section>
+        <s-paragraph>
           Congratulations! Your store has been successfully connected to IndexGPT.
           We'll now automatically generate AI-indexable content (llms.txt) for your store
           and submit it to search engines to improve your AI discoverability.
-        &lt;/s-paragraph&gt;
-      &lt;/s-section&gt;
+        </s-paragraph>
+      </s-section>
 
-      &lt;s-section heading="What's next?"&gt;
-        &lt;s-paragraph&gt;
-          &lt;s-list&gt;
-            &lt;s-list-item&gt;Generate llms.txt file with your store content&lt;/s-list-item&gt;
-            &lt;s-list-item&gt;Submit to IndexNow API for better search visibility&lt;/s-list-item&gt;
-            &lt;s-list-item&gt;Track submission status in the dashboard&lt;/s-list-item&gt;
-          &lt;/s-list&gt;
-        &lt;/s-paragraph&gt;
-      &lt;/s-section&gt;
+      <s-section heading="What's next?">
+        <s-paragraph>
+          <s-list>
+            <s-list-item>Generate llms.txt file with your store content</s-list-item>
+            <s-list-item>Submit to IndexNow API for better search visibility</s-list-item>
+            <s-list-item>Track submission status in the dashboard</s-list-item>
+          </s-list>
+        </s-paragraph>
+      </s-section>
 
-      &lt;s-section&gt;
-        &lt;s-button slot="primary-action" onClick={handleContinue}&gt;
+      <s-section>
+        <s-button slot="primary-action" onClick={handleContinue}>
           Continue to Dashboard
-        &lt;/s-button&gt;
-      &lt;/s-section&gt;
-    &lt;/s-page&gt;
+        </s-button>
+      </s-section>
+    </s-page>
   );
 }

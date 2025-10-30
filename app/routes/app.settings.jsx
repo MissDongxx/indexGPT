@@ -90,21 +90,21 @@ export default function Settings() {
   };
 
   return (
-    &lt;s-page heading="Settings"&gt;
+    <s-page heading="Settings">
       {loading ? (
-        &lt;s-section&gt;
-          &lt;s-spinner size="large" /&gt;
-          &lt;s-text&gt;Loading settings...&lt;/s-text&gt;
-        &lt;/s-section&gt;
+        <s-section>
+          <s-spinner size="large" />
+          <s-text>Loading settings...</s-text>
+        </s-section>
       ) : (
-        &lt;s-section&gt;
-          &lt;s-form&gt;
-            &lt;s-block-stack gap="large"&gt;
+        <s-section>
+          <s-form>
+            <s-block-stack gap="large">
               {/* 语言设置 */}
-              &lt;s-box background="surface" padding="base" border-radius="base"&gt;
-                &lt;s-block-stack gap="base"&gt;
-                  &lt;s-text as="h3"&gt;Language&lt;/s-text&gt;
-                  &lt;s-select
+              <s-box background="surface" padding="base" border-radius="base">
+                <s-block-stack gap="base">
+                  <s-text as="h3">Language</s-text>
+                  <s-select
                     label="Interface Language"
                     options={[
                       { label: "English", value: "en-US" },
@@ -112,16 +112,16 @@ export default function Settings() {
                     ]}
                     value={settings.language}
                     onChange={handleLanguageChange}
-                  &gt;
-                  &lt;/s-select&gt;
-                &lt;/s-block-stack&gt;
-              &lt;/s-box&gt;
+                  >
+                  </s-select>
+                </s-block-stack>
+              </s-box>
 
               {/* 提交频率设置 */}
-              &lt;s-box background="surface" padding="base" border-radius="base"&gt;
-                &lt;s-block-stack gap="base"&gt;
-                  &lt;s-text as="h3"&gt;Submission Frequency&lt;/s-text&gt;
-                  &lt;s-select
+              <s-box background="surface" padding="base" border-radius="base">
+                <s-block-stack gap="base">
+                  <s-text as="h3">Submission Frequency</s-text>
+                  <s-select
                     label="How often should we submit to IndexNow?"
                     options={[
                       { label: "Hourly", value: "hourly" },
@@ -130,41 +130,41 @@ export default function Settings() {
                     ]}
                     value={settings.submitFrequency}
                     onChange={handleFrequencyChange}
-                  &gt;
-                  &lt;/s-select&gt;
-                &lt;/s-block-stack&gt;
-              &lt;/s-box&gt;
+                  >
+                  </s-select>
+                </s-block-stack>
+              </s-box>
 
               {/* 包含路径设置 */}
-              &lt;s-box background="surface" padding="base" border-radius="base"&gt;
-                &lt;s-block-stack gap="base"&gt;
-                  &lt;s-text as="h3"&gt;Include Paths&lt;/s-text&gt;
-                  &lt;s-text-field
+              <s-box background="surface" padding="base" border-radius="base">
+                <s-block-stack gap="base">
+                  <s-text as="h3">Include Paths</s-text>
+                  <s-text-field
                     label="Paths to include in llms.txt (one per line)"
                     multiline={5}
                     value={settings.includePaths.join('\n')}
                     onChange={handlePathsChange}
-                  &gt;
-                  &lt;/s-text-field&gt;
-                  &lt;s-text as="p" variant="bodySm" tone="subdued"&gt;
+                  >
+                  </s-text-field>
+                  <s-text as="p" variant="bodySm" tone="subdued">
                     Specify which paths should be included in the llms.txt file.
                     Each path should be on a separate line.
-                  &lt;/s-text&gt;
-                &lt;/s-block-stack&gt;
-              &lt;/s-box&gt;
+                  </s-text>
+                </s-block-stack>
+              </s-box>
 
               {/* 保存按钮 */}
-              &lt;s-button
+              <s-button
                 slot="primary-action"
                 onClick={handleSave}
                 loading={fetcher.state === "submitting"}
-              &gt;
+              >
                 Save Settings
-              &lt;/s-button&gt;
-            &lt;/s-block-stack&gt;
-          &lt;/s-form&gt;
-        &lt;/s-section&gt;
+              </s-button>
+            </s-block-stack>
+          </s-form>
+        </s-section>
       )}
-    &lt;/s-page&gt;
+    </s-page>
   );
 }
