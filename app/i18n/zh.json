@@ -1,0 +1,77 @@
+{
+  "app": {
+    "title": "IndexGPT - AI商店索引",
+    "description": "让您的Shopify商店被AI发现"
+  },
+  "navigation": {
+    "dashboard": "仪表板",
+    "settings": "设置",
+    "logs": "提交日志"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎使用IndexGPT！",
+    "description": "我们自动为您的商店生成AI可索引内容（llms.txt），并将其提交给搜索引擎，以提高您的AI可发现性。",
+    "features": {
+      "llms_generation": "生成包含商店内容的llms.txt文件",
+      "indexnow_submission": "提交到IndexNow API以获得更好的搜索可见性",
+      "status_tracking": "在仪表板中跟踪提交状态"
+    },
+    "actions": {
+      "continue": "继续到仪表板"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "language": {
+      "title": "语言",
+      "label": "界面语言"
+    },
+    "frequency": {
+      "title": "提交频率",
+      "label": "我们应该多久提交一次到IndexNow？",
+      "options": {
+        "hourly": "每小时",
+        "daily": "每天",
+        "weekly": "每周"
+      }
+    },
+    "paths": {
+      "title": "包含路径",
+      "label": "要包含在llms.txt中的路径（每行一个）",
+      "description": "指定应包含在llms.txt文件中的路径。每个路径应单独占一行。"
+    },
+    "actions": {
+      "save": "保存设置"
+    }
+  },
+  "logs": {
+    "title": "提交日志",
+    "history": "IndexNow提交历史",
+    "columns": {
+      "timestamp": "时间戳",
+      "status": "状态",
+      "url_count": "URL数量",
+      "response_code": "响应代码",
+      "message": "消息"
+    },
+    "status": {
+      "success": "成功",
+      "failed": "失败"
+    },
+    "actions": {
+      "refresh": "刷新",
+      "submit_now": "立即提交到IndexNow",
+      "previous": "上一页",
+      "next": "下一页"
+    }
+  },
+  "common": {
+    "loading": "加载中...",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "close": "关闭"
+  }
+}

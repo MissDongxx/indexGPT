@@ -1,0 +1,77 @@
+{
+  "app": {
+    "title": "IndexGPT - AI Store Indexing",
+    "description": "Get your Shopify store found by AI"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logs": "Submission Logs"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to IndexGPT!",
+    "description": "We automatically generate AI-indexable content (llms.txt) for your store and submit it to search engines to improve your AI discoverability.",
+    "features": {
+      "llms_generation": "Generate llms.txt file with your store content",
+      "indexnow_submission": "Submit to IndexNow API for better search visibility",
+      "status_tracking": "Track submission status in the dashboard"
+    },
+    "actions": {
+      "continue": "Continue to Dashboard"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "title": "Language",
+      "label": "Interface Language"
+    },
+    "frequency": {
+      "title": "Submission Frequency",
+      "label": "How often should we submit to IndexNow?",
+      "options": {
+        "hourly": "Hourly",
+        "daily": "Daily",
+        "weekly": "Weekly"
+      }
+    },
+    "paths": {
+      "title": "Include Paths",
+      "label": "Paths to include in llms.txt (one per line)",
+      "description": "Specify which paths should be included in the llms.txt file. Each path should be on a separate line."
+    },
+    "actions": {
+      "save": "Save Settings"
+    }
+  },
+  "logs": {
+    "title": "Submission Logs",
+    "history": "IndexNow Submission History",
+    "columns": {
+      "timestamp": "Timestamp",
+      "status": "Status",
+      "url_count": "URL Count",
+      "response_code": "Response Code",
+      "message": "Message"
+    },
+    "status": {
+      "success": "Success",
+      "failed": "Failed"
+    },
+    "actions": {
+      "refresh": "Refresh",
+      "submit_now": "Submit to IndexNow Now",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  }
+}
