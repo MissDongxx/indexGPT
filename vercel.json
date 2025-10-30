@@ -2,13 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "build/server/index.js",
+      "src": "package.json",
       "use": "@vercel/node",
       "config": {
         "includeFiles": [
           "build/**",
-          "node_modules/**",
-          ".env"
+          "node_modules/**"
         ]
       }
     }
@@ -22,16 +21,15 @@
       "dest": "/build/$1"
     },
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/build/server/index.js"
     }
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
   }
 }
